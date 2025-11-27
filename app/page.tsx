@@ -9,6 +9,8 @@ export default async function Home() {
 
   const { access_token } = await authResponse.json();
 
+  // TODO :: FOR  getting all the achievements obtainable use ->  https://eu.api.blizzard.com/data/wow/achievement/index?namespace=static-eu&locale=en_US
+
   const response = await fetch(
     "https://eu.api.blizzard.com/profile/wow/character/dentarg/marg/achievements?namespace=profile-eu&locale=en_US",
     {
@@ -23,9 +25,9 @@ export default async function Home() {
       <main className="flex min-h-screen w-full max-w-5xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black xs:items-start">
         <h1 className="mb-5 text-4xl items-center font-bold md:text-4xl lg:text-5xl">
           Marg&apos;s achievement of the day
-          {data.achievements[5] && (
+          {data.achievements[105] && (
             <span className="block mt-4 text-2xl font-semibold text-zinc-600 dark:text-zinc-400">
-              {data.achievements[5].achievement.name}
+              {data.achievements[105].achievement.name}
             </span>
           )}
         </h1>
